@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime No Checker - Techy Codes</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="canonical" href="https://tools.techycodes.tech/prime-number-checker" />
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</head>
+
+<body>
+    <style>
+        body {
+
+            margin: 0;
+            font-family: var(--tblr-font-sans-serif);
+            color: #232e3c;
+            background-color: #f4f6fa;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        :root {
+            --tblr-blue: #206bc4;
+            --tblr-azure: #4299e1;
+            --tblr-indigo: #4263eb;
+            --tblr-purple: #ae3ec9;
+            --tblr-pink: #d6336c;
+            --tblr-red: #d63939;
+            --tblr-orange: #f76707;
+            --tblr-yellow: #f59f00;
+            --tblr-lime: #74b816;
+            --tblr-green: #2fb344;
+            --tblr-teal: #0ca678;
+            --tblr-cyan: #17a2b8;
+            --tblr-primary: #206bc4;
+            --tblr-secondary: #656d77;
+            --tblr-success: #2fb344;
+            --tblr-info: #4299e1;
+            --tblr-warning: #f76707;
+            --tblr-danger: #d63939;
+            --tblr-light: #f4f6fa;
+            --tblr-dark: #232e3c;
+            --tblr-font-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+            --tblr-font-monospace: null, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+            --tblr-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+        }
+
+        .container-tight {
+
+            width: 100%;
+
+            margin-top: 8%;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 30rem;
+
+            box-shadow: rgba(35, 46, 60, .04) 0 2px 4px 0;
+            border: 1px solid rgba(101, 109, 119, .16);
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(101, 109, 119, .16);
+            border-radius: 4px;
+        }
+
+
+
+
+        .btn {
+            display: inline-block;
+            width: 50%;
+            align-items: center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+            line-height: 1.4285714;
+            color: #232e3c;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .4375rem 1rem;
+            font-size: 22px;
+            border-radius: 3px;
+            margin-top: 50px;
+            transition:
+                color .15s ease-in-out,
+                background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                box-shadow .15s ease-in-out;
+        }
+
+        .btn-dark {
+            --tblr-btn-color: 35, 46, 60;
+            --tblr-btn-color-darker: 32, 41, 54;
+            --tblr-btn-color-text: #f4f6fa;
+            background-color: rgba(var(--tblr-btn-color), 1);
+            color: var(--tblr-btn-color-text);
+
+
+        }
+
+
+        .btn:hover {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .btn:focus {
+            outline: 0;
+            box-shadow: 0 0 0 .25rem rgba(32, 107, 196, .25)
+        }
+
+        .btn:disabled {
+            pointer-events: none;
+            opacity: .65
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 20px;
+
+
+
+
+        }
+
+        .text ::selection {
+            background: transparent;
+
+        }
+
+
+
+        .place-holder {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: .4375rem .75rem;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.4285714;
+            color: #232e3c;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dadcde;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 4px;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+    </style>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/img/logo.png" width="30" height="30" class="d-inline-block align-top" style="margin-left: 50px;"
+                alt=""><span style="margin-left: 20px; font-weight:500; font-family: Didact Gothic, sans-serif; ">Tools
+                - Techy
+                Codes</span></a>
+        <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul style="margin-right: 50px; font-family: Didact Gothic, sans-serif; font-weight: bold;"
+                class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://techycodes.tech/">Techy Codes</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://mohitgoyal.me/">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://tools.techycodes.tech/">Tool Website</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/mohitgoyal1108/">LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="https://mohitgoyal.me/">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://techycodes.tech/contact-us/">Contact</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="container-tight">
+
+
+        <form name="frm" class="text">
+
+            <label>
+                <h2 style="margin-bottom: 25px;"> Prime No. Checker </h2>
+
+                <input style="text-align: center;" onKeyup="isInteger()" class="place-holder form-control" type="text"
+                    name="txt" placeholder="Enter any Number">
+
+            </label>
+
+
+        </form>
+        <button class="btn btn-dark" type="button" name=cal value="check" onclick="pricalc()">
+            Check number!
+        </button>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        function pricalc() {
+            var a = frm.txt.value;
+            if (a == "") alert("Please! Enter the Value!");
+            else {
+                var num = parseInt(a);
+                var i;
+                for (i = 2; i < num; i++) {
+                    var n;
+                    n = num % i;
+                    if (n == 0) {
+                        alert("Is's Not a Prime Number!!");
+                        break;
+                    }
+
+                }
+                if (i == num) {
+                    alert("It's a Prime Number!!");
+                }
+            }
+        }
+        function isInteger(s) {
+            var i; s = s.toString(s);
+            for (i = 0; i < s.length; i++) {
+                var c = s.charAt(i);
+                if (isNaN(c)) {
+                    alert("Given value is not a number!!");
+                    frm.txt.value = "";
+                    return false;
+                }
+            }
+            return true;
+        } 
+    </script>
+</body>
+
+</html>

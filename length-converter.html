@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter - Techy Codes</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/lengthConv.css">
+    <link rel="canonical" href="https://tools.techycodes.tech/length-converter" />
+
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+
+</head>
+
+<body>
+
+
+    <script language="JavaScript">
+        function cmConverter() {
+            document.converter.inch.value = document.converter.cm.value / 2.54 + " Inche"
+            document.converter.feet.value = document.converter.cm.value / 30.48 + " Feet"
+        }
+        function inchConverter() {
+            document.converter.cm.value = document.converter.inch.value * 2.54 + " Cm"
+            document.converter.feet.value = document.converter.inch.value / 12 + " Feet"
+        }
+        function feetConverter() {
+            document.converter.cm.value = document.converter.feet.value * 30.48 + " Cm"
+            document.converter.inch.value = document.converter.feet.value * 12 + " Inche"
+        }
+    </script>
+
+    <div class="login-div">
+        <div class="logo"></div>
+        <div class="title">Length Converter</div>
+        <div class="sub-title">CM - INCH - FEET</div>
+        <div class="fields">
+
+            <form name="converter">
+
+                <input class="inp-length" name="cm" onchange="cmConverter()" placeholder="Centimeter" type="text" />
+
+                <input class="inp-length" name="inch" onchange="inchConverter()" placeholder="Inches" type="text" />
+
+                <input class="inp-length" name="feet" onchange="feetConverter()" placeholder="Feet" type="text" />
+
+            </form>
+        </div>
+
+
+        <input class="convert-btn" type="button" value="Convert!" />
+
+
+        <div class="link">
+            <a href="https://techycodes.tech/">Visit Official Website</a> or
+            <a href="https://tools.techycodes.tech/">Tool Website</a>
+
+
+        </div>
+        </a>All rights reserved.
+        <span class='creator'>Made with &#9829; by
+
+            <a style="color: #aaa; text-decoration: none;" href='https://techycodes.tech/'> Techy Codes</a>
+        </span>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // Protection Starts
+
+        $(document).bind("contextmenu", function (e) {
+            return false;
+        });
+
+        $(document).keydown(function (event) {
+            // Prevent F12 -
+            if (event.keyCode == 123) {
+                return false;
+            }
+            // Prevent Ctrl+a = disable select all
+            // Prevent Ctrl+u = disable view page source
+            // Prevent Ctrl+s = disable save
+            if (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83 || event.keyCode === 65)) {
+                return false;
+            }
+            // Prevent Ctrl+Shift+I = disabled debugger console using keys open
+            else if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+                return false;
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>
