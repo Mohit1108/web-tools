@@ -11,7 +11,20 @@
     <link rel="canonical" href="https://tools.techycodes.tech/length-converter" />
 
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
-
+    <!-- Navbar Js  -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="/assets/navbar.js"></script>
+    <script src="/js/script.js"></script>
+    <!-- Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,6 +44,8 @@
             document.converter.inch.value = document.converter.feet.value * 12 + " Inche"
         }
     </script>
+    <div id="tools-Navbar">
+    </div>
 
     <div class="login-div">
         <div class="logo"></div>
@@ -69,30 +84,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
-        // Protection Starts
 
-        $(document).bind("contextmenu", function (e) {
-            return false;
-        });
-
-        $(document).keydown(function (event) {
-            // Prevent F12 -
-            if (event.keyCode == 123) {
-                return false;
-            }
-            // Prevent Ctrl+a = disable select all
-            // Prevent Ctrl+u = disable view page source
-            // Prevent Ctrl+s = disable save
-            if (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83 || event.keyCode === 65)) {
-                return false;
-            }
-            // Prevent Ctrl+Shift+I = disabled debugger console using keys open
-            else if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
-                return false;
-            }
-        });
-    </script>
 
 
 

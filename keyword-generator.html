@@ -5,17 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Number Checker - Techy Codes</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="canonical" href="https://tools.techycodes.tech/prime-number-checker" />
+    <title>Keyword Generator - Techy Codes</title>
+    <link rel="canonical" href="https://tools.techycodes.tech/keyword-generator" />
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/script.js"></script>
-
     <!-- Navbar Js  -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="/assets/navbar.js"></script>
-
     <!-- Bootstrap js  -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -28,7 +23,11 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+
+
+<body style="min-height: 100%;" oncopy="return false" oncut="return false">
+
+
     <style>
         body {
 
@@ -38,6 +37,7 @@
             background-color: #f4f6fa;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+
         }
 
         :root {
@@ -90,6 +90,42 @@
         }
 
 
+        .result-tight {
+
+            width: 100%;
+
+            margin-top: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 0;
+            max-width: 50rem;
+
+            box-shadow: rgba(35, 46, 60, .04) 0 2px 4px 0;
+            border: 1px solid rgba(101, 109, 119, .16);
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(101, 109, 119, .16);
+            border-radius: 4px;
+            padding-left: 25px;
+            text-align: justify;
+        }
+
+        .result-tight ::first-letter {
+            text-transform: capitalize
+        }
+
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
 
 
         .btn {
@@ -99,6 +135,7 @@
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+
             font-weight: 500;
             line-height: 1.4285714;
             color: #232e3c;
@@ -132,6 +169,7 @@
 
         }
 
+
         .btn:hover {
             color: white;
             text-decoration: none;
@@ -154,10 +192,20 @@
             margin-top: 20px;
             align-items: center;
             text-align: center;
+
+
+
+
         }
 
         .text ::selection {
             background: transparent;
+
+        }
+
+        .insert {
+            font-size: 18px;
+            font-weight: 400;
 
         }
 
@@ -182,61 +230,43 @@
             border-radius: 4px;
             transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         }
-
-
-
-        .result-tight {
-
-            width: 100%;
-
-            margin-top: 20px;
-            margin-right: auto;
-            margin-left: auto;
-            margin-bottom: 0;
-            max-width: 50rem;
-
-            box-shadow: rgba(35, 46, 60, .04) 0 2px 4px 0;
-            border: 1px solid rgba(101, 109, 119, .16);
-
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            word-wrap: break-word;
-            background-color: #fff;
-            background-clip: border-box;
-            border: 1px solid rgba(101, 109, 119, .16);
-            border-radius: 4px;
-            padding-left: 25px;
-            text-align: justify;
-        }
-
-        .result-tight ::first-letter {
-            text-transform: capitalize
-        }
     </style>
 
     <div id="tools-Navbar">
     </div>
 
 
-    <div class="container-tight">
+    <div style="align-items: center; text-align: center;" class="container-tight">
 
 
-        <form name="frm" class="text">
+        <form class="text" action="" id="autocomplete">
 
             <label>
-                <h2 style="margin-bottom: 25px;"> Prime Number Checker </h2>
+                <h2 style="margin-bottom: 25px;"> Keyword Generator </h2>
 
-                <input style="text-align: center;" onKeyup="isInteger()" class="place-holder form-control" type="text"
-                    name="txt" placeholder="Enter any Number">
-
+                <input style="text-align: center;" class="place-holder form-control" type="text" name="keyword"
+                    id="keyword" placeholder="Enter any Keyword">
+                <br>
             </label>
 
+            <label>
+                <input type="checkbox" name="iterate-alpha" id="alpha">
+                <span>Include results for "keyword [a-z]</span>
+                <br>
+            </label>
 
+            <label>
+                <input type="checkbox" name="numbers">
+                <span>Include results for "keyword [0-9]</span>
+                <br>
+            </label>
+
+            <button class="btn btn-dark" type="submit">Get keywords!</button>
+            <br>
+            <meter id="progress-meter" value=0 min=0 max=1></meter>
         </form>
-        <button class="btn btn-dark" type="button" name=cal value="check" onclick="pricalc()">
-            Check number!
-        </button>
+
+
 
 
 
@@ -246,55 +276,116 @@
             </div>
 
         </div>
-
-
     </div>
-
-
-
-    <script type="text/javascript">
-        var resultList = document.getElementById('results');
-
-        function pricalc() {
-            var a = frm.txt.value;
-            if (a == "")
-                resultList.innerHTML = `<h2 style="text-align: center;">Please! Enter the Value!!</h2>`;
-            else if (a == "1")
-                resultList.innerHTML = `<h2 style="text-align: center;">It is not a Prime Number!!</h2>`;
-            else if (a == "0")
-                resultList.innerHTML = `<h2 style="text-align: center;"> 0 is not a Prime number!!</h2>`;
-
-            else {
-                var num = parseInt(a);
-                var i;
-                for (i = 2; i < num; i++) {
-                    var n;
-                    n = num % i;
-                    if (n == 0) {
-                        resultList.innerHTML = `<h2 style="text-align: center;">Is's Not a Prime Number!!!</h2>`;
-                        break;
-                    }
-                }
-                if (i == num) {
-
-                    resultList.innerHTML = `<h2 style="text-align: center;">It's a Prime Number!!!</h2>`;
-                }
-            }
+</body>
+<script>
+    var endpoint = 'https://completion.amazon.com/search/complete?mkt=1&search-alias=aps&x=queryKeywordComplete&Result&q=';
+    var keywords = [];
+    var results = {};
+    var queryIndex = 0;
+    var meter = document.getElementById('progress-meter');
+    var resultList = document.getElementById('results');
+    var ranks = {};
+    function updateProgress() {
+        meter.value = queryIndex / keywords.length;
+    }
+    function queryKeywords() {
+        queryIndex = 0;
+        nextQuery();
+    }
+    function nextQuery() {
+        updateProgress();
+        if (queryIndex < keywords.length) {
+            queryKeyword(keywords[queryIndex]);
+        } else {
+            displayResults();
         }
-        function isInteger(s) {
-            var i;
-            s = s.toString(s);
-            for (i = 0; i < s.length; i++) {
-                var c = s.charAt(i);
-                if (isNaN(c)) {
-                    resultList.innerHTML = `<h2 style="text-align: center;">Given Input is not a Number!!!</h2>`;
-                    frm.txt.value = "";
-                    return false;
-                }
-            }
-            return true;
-        } 
-    </script>
+    }
+    function displayResults() {
+        var resultHTML = '';
+        for (var keyword in results) {
+            resultHTML += `<h2>${keyword}</h2>`;
+            resultHTML += `<ul>`;
+            results[keyword].forEach(function (item) {
+                resultHTML += `<li title="${keyword}">${item}</li>`;
+            })
+            resultHTML += `</ul>`;
+        }
+        resultList.innerHTML = resultHTML;
+    }
+    function queryKeyword(keyword) {
+        keyword = encodeURIComponent(keyword);
+        // to get around cors and other formatting issues the result of this causes.
+        var s = document.getElementById('az-autocomplete');
+        if (s) {
+            s.remove();
+        }
+        s = document.createElement("script");
+        s.id = 'az-autocomplete';
+        s.type = "text/javascript";
+        s.src = `${endpoint}${keyword}`;
+        document.body.append(s);
+    }
+    function queryKeywordComplete() {
+        queryIndex++;
+        storeQueryResult();
+        nextQuery();
+    }
+    function storeQueryResult() {
+        if (completion) {
+            var keyword = completion[0];
+            var result = completion[1];
+            results[keyword] = result;
+        }
+    }
+    function iterateAlphabet(keyword) {
+        var list = [];
+        for (var i = 0; i < 26; i++) {
+            // 97 = a
+            var char = String.fromCharCode(97 + i);
+            list.push(`${keyword} ${char}`);
+        }
+        return list;
+    }
+    function iterateNumbers(keyword) {
+        var list = [];
+        for (var i = 0; i <= 9; i++) {
+            list.push(`${keyword} ${i}`);
+        }
+        return list;
+    }
+    var queryForm = document.getElementById('autocomplete');
+    queryForm.addEventListener('submit', function (e) {
+        var keyword = e.target.keyword.value;
+        var alpha = e.target.alpha.checked;
+        var numbers = e.target.numbers.checked;
+        keywords = [];
+        results = {};
+        ranks = [];
+        if (alpha || numbers) {
+            var height = Math.floor(Math.random() * (900 - 300) + 300);
+            resultList.innerHTML = `<h2 style="text-align: center;">Please Wait!!</h2>`;
+        } else {
+            resultList.innerHTML = '';
+        }
+        e.preventDefault();
+        updateKeywords(keyword, alpha, numbers);
+        queryKeywords();
+    })
+    function updateKeywords(keyword, addAlpha, addNumbers) {
+        keywords.push(keyword);
+        if (addAlpha) {
+            var a = iterateAlphabet(keyword);
+            keywords = keywords.concat(a);
+        }
+        if (addNumbers) {
+            var n = iterateNumbers(keyword);
+            keywords = keywords.concat(n);
+        }
+    }
+
+</script>
+
 </body>
 
 </html>
