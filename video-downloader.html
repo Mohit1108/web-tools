@@ -17,8 +17,7 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/938d7bb336.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/script.js"></script>
+
 
     <!-- Navbar Js  -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
@@ -107,7 +106,7 @@
 
     <div class="login-div">
         <div class="logo-downloader"></div>
-        <div class="title">Youtube Video Downloader</div>
+        <div class="title">Video Downloader</div>
         <div class="sub-title">
             <marquee class="scroll-text">
                 Created by- Mohit Goyal |
@@ -155,7 +154,7 @@
                 </div>
             </div>
         </div>
-        <div class="link">
+        <div class="links">
             <a href="https://techycodes.tech/">Visit Official Website</a> or
             <a href="https://tools.techycodes.tech/">Tool Website</a>
             <br> All rights reserved. <br>
@@ -177,17 +176,16 @@
     </div>
 
 
-    <script type="text/javascript">
-        $(".click-btn-down").click(function () {
-            var link = $(".link").val();
-            var fromate = $(".formte").children("option:selected").val();
-            var src = "" + link + "=" + fromate + "";
-            downloadVideo(link, fromate);
-        });
-        function downloadVideo(link, fromate) {
-            $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden; border-radius:25px;" scrolling="no" src="https://loader.to/api/button/?url=' + link + '&f=' + fromate + '"></iframe>');
-        }
-    </script>
-
 
 </body>
+<script type="text/javascript">
+    $(".click-btn-down").click(function () {
+        var link = $(".link").val();
+        var fromate = $(".formte").children("option:selected").val();
+        var src = "" + link + "=" + fromate + "";
+        downloadVideo(link, fromate);
+    });
+    function downloadVideo(link, fromate) {
+        $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden; border-radius:25px;" scrolling="no" src="https://loader.to/api/button/?url=' + link + '&f=' + fromate + '"></iframe>');
+    }
+</script>

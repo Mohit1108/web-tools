@@ -106,3 +106,16 @@ body{
     align-items: center;
     text-align: center;
 }
+.links{
+    padding-top: 20px;
+    text-align: center;
+    align-items: center;
+}
+.links a{
+    text-decoration: none;
+    color: #aaa;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+}
