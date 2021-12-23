@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='en-US' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b'
+    xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta content='' name='theme-color' />
+    <!-- Windows Phone -->
+    <meta content='' name='msapplication-navbutton-color' />
+    <meta content='blogger' name='generator' />
+    <link href='https://privacypolicy-generatortool.blogspot.com/favicon.ico' rel='icon' type='image/x-icon' />
+    <link href='https://privacypolicy-generatortool.blogspot.com/' rel='canonical' />
+    <link rel="alternate" type="application/atom+xml" title="Privacy Policy Generator Tool - Atom"
+        href="https://privacypolicy-generatortool.blogspot.com/feeds/posts/default" />
+    <link rel="alternate" type="application/rss+xml" title="Privacy Policy Generator Tool - RSS"
+        href="https://privacypolicy-generatortool.blogspot.com/feeds/posts/default?alt=rss" />
+    <link rel="service.post" type="application/atom+xml" title="Privacy Policy Generator Tool - Atom"
+        href="https://www.blogger.com/feeds/4477755393253498573/posts/default" />
+    <link rel="me" href="https://www.blogger.com/profile/09226000421829809677" />
+    <!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+    <meta content='https://privacypolicy-generatortool.blogspot.com/' property='og:url' />
+    <meta content='Privacy Policy Generator Tool' property='og:title' />
+    <meta content='' property='og:description' />
+    <!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+    <title>Privacy Policy Generator Tool</title>
+    <style id='page-skin-1' type='text/css'>
+        body {
+            background: #fff
+        }
+
+        body {
+            padding: 1rem;
+            background: #0cebeb;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .generator {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .generator__questions {
+            display: flex;
+            flex-flow: column wrap;
+            flex: 1;
+        }
+
+        .generator__questions label {
+            margin-bottom: 0.25rem;
+        }
+
+        .generator__questions input {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+        }
+
+        .generator__questions input#youtubeVID {
+            width: 200px;
+        }
+
+        .generator__questions input#headline,
+        .generator__questions input#blurb {
+            width: 270px;
+        }
+
+        .generator__questions button {
+            margin-top: 1rem;
+            max-width: 200px;
+            border: 1px solid #27ae60;
+            background: #2ecc71;
+            padding: 1rem;
+            color: #ecf0f1;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .generator__questions button:hover {
+            background: #27ae60;
+        }
+
+        .generator__markup {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .generator__markup pre code {
+            background-color: #eee;
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+            border-radius: 3px;
+            padding: 10px;
+            font-size: 18px;
+            height: 52px;
+            cursor: pointer;
+            background-color: #2ecc71;
+        }
+    </style>
+    <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109' />
+    <meta name='google-adsense-platform-domain' content='blogspot.com' />
+
+</head>
+
+<body>
+    <div class='main section' id='main'>
+        <div class='widget HTML' data-version='1' id='HTML1'>
+            <div class='widget-content'>
+                <!doctype html>
+                <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+                <div class="generator">
+                    <div class="generator__questions">
+                        <h1>Privacy Policy Generator Tool:</h1>
+                        <label for="youtubeVID">Website Name:</label>
+                        <input id="youtubeVID" type="text" placeholder="ex. Google" />
+
+                        <label for="headline">Website Url:</label>
+                        <input id="headline" type="text" placeholder="google.com" />
+
+                        <label for="blurb">Emali Id:</label>
+                        <input id="blurb" type="text" placeholder="123@gmail.com" />
+
+                        <button class="generate-markup">Generate Code</button>
+                    </div>
+                    <div class="generator__markup">
+                        <h1>Copy And Paste Result:</h1>
+                        <pre>
+
+    <p id="p2"><code class="generator__markup-generated"></code></p>
+
+<button onclick="copyToClipboard('#p2')">Copy Codes</button>
+
+		</pre>
+                    </div>
+                </div>
+                </!doctype>
+            </div>
+        </div>
+
+        <script type='text/javascript'>
+            //<![CDATA[
+            const generate = document.querySelector('.generate-markup');
+
+            generate.addEventListener('click', () => {
+                const youtubeID = document.querySelector('#youtubeVID').value;
+                const headline = document.querySelector('#headline').value;
+                const blurb = document.querySelector('#blurb').value;
+                const markupContainer = document.querySelector('.generator__markup-generated');
+
+                const markup = `
+<div>
+
+            <h2>Privacy Policy for <b>${youtubeID}</b></h2> <p>At <b>${youtubeID}</b>, 
+            accessible from  <b>${headline} </b>, one of our main priorities is the privacy of our visitors.
+            This Privacy Policy document contains types of information that is collected and recorded by ${youtubeID}
+            and how we use it.</p><p>If you have additional questions or require more information about our Privacy Policy,
+            do not hesitate to Contact through email at <b>${blurb}</b></p> <h2>Log Files</h2> <p> <b>${youtubeID}</b> 
+            follows a standard procedure of using log files. These files log visitors when they visit websites. 
+            All hosting companies do this and a part of hosting services analytics.
+            The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP),
+            date and time stamp, referring/exit pages, and possibly the number of clicks. 
+            These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, 
+            administering the site, tracking users movement on the website, and gathering demographic information.
+            </p><h2>Cookies and Web Beacons</h2><p>Like any other website, <b>${youtubeID}</b> 
+            uses cookies. These cookies are used to store information including visitors preferences 
+            and the pages on the website that the visitor accessed or visited.
+            The information is used to optimize the users experience by customizing our web page content based on visitors browser type 
+            and/or other information.</p><h2>Google DoubleClick DART Cookie</h2><p>Google is one of a third-party vendor on our site. 
+            It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com 
+            and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google a
+            d and content network Privacy Policy at the following URL &#8211; 
+            <a href="https://policies.google.com/technologies/ads">                        https://policies.google.com/technologies/ads</a>
+            </p><h2>Privacy Policies</h2><P>You may consult this list to find the Privacy 
+            Policy for each of the advertising partners of <b>${youtubeID}</b>.
+            Our Privacy Policy was created with the help of the <a href="https://www.infinitythemes.store/">
+            GDPR Privacy Policy Generator</a></p><p>Third-party ad servers or ad networks uses technologies like cookies,
+            JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on
+            <b>${youtubeID}</b>, which are sent directly to usersbrowser. 
+            They automatically receive your IP address when this occurs. 
+            These technologies are used to measure the effectiveness of their advertising campaigns and/or 
+            to personalize the advertising content that you see on websites that you visit.</p><p>Note that
+            <b>${youtubeID}</b> has no access to or control over these cookies that are used by third-party 
+            advertisers.</p><h2>Third Pary Privacy Policies</h2><p><b>${youtubeID}</b> s Privacy Policy does 
+            not apply to other advertisers or websites. Thus, we are advising you to consult the respective 
+            Privacy Policies of these third-party ad servers for more detailed information. It may include 
+            their practices and instructions about how to opt-out of certain options. You may find a complete
+            list of these Privacy Policies and their links here: Privacy Policy Links.
+            </p><p>You can choose to disable cookies through your individual browser options.
+            To know more detailed information about cookie management with specific web browsers,
+            it can be found at the browsers respective websites. What Are Cookies?</p><h2>Children 
+            s Information</h2><p>Another part of our priority is adding protection for children 
+            while using the internet. We encourage parents and guardians to observe, participate
+            in, and/or monitor and guide their online activity.</p><p><b>${youtubeID}</b>
+            does not knowingly collect any Personal Identifiable Information from children
+            under the age of 13. If you think that your child provided this kind of information 
+            on our website, we strongly encourage you to Contact immediately and we will do our 
+            best efforts to promptly remove such information from our records.</p><h2>Online 
+            Privacy Policy Only</h2><p>This Privacy Policy applies only to our online activities
+            and is valid for visitors to our website with regards to the information that 
+            they shared and/or collect in <b>${youtubeID}</b>. This policy is not applicable to
+            any information collected offline or via channels other than this website.</p><h2>Consent</h2><p>By using our website, 
+            you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p></div>	`;
+
+                markupContainer.textContent = markup;
+            });
+
+            function copyToClipboard(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+            }
+
+//]]>
+        </script>
+
+        <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/181159686-widgets.js"></script>
+        <script type='text/javascript'>
+            window['__wavt'] = 'AOuZoY4nRcpxNAlCK2PKngNIj9BfPPrP8g:1640193075829'; _WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d4477755393253498573',
+                '//privacypolicy-generatortool.blogspot.com/', '4477755393253498573');
+            _WidgetManager._SetDataContext([{
+                'name': 'blog', 'data': {
+                    'blogId': '4477755393253498573',
+                    'title': 'Privacy Policy Generator Tool', 'url': 'https://privacypolicy-generatortool.blogspot.com/',
+                    'canonicalUrl': 'https://privacypolicy-generatortool.blogspot.com/', 'homepageUrl': 'https://privacypolicy-generatortool.blogspot.com/',
+                    'searchUrl': 'https://privacypolicy-generatortool.blogspot.com/search', 'canonicalHomepageUrl': 'https://privacypolicy-generatortool.blogspot.com/',
+                    'blogspotFaviconUrl': 'https://privacypolicy-generatortool.blogspot.com/favicon.ico',
+                    'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true,
+                    'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false,
+                    'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en-GB', 'localeUnderscoreDelimited': 'en_gb',
+                    'languageDirection': 'ltr', 'isPrivate': true, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false,
+                    'isDynamicViewsAvailable': true,
+                    'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Privacy Policy Generator Tool - Atom\x22 href\x3d\x22https://privacypolicy-generatortool.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Privacy Policy Generator Tool - RSS\x22 href\x3d\x22https://privacypolicy-generatortool.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Privacy Policy Generator Tool - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/4477755393253498573/posts/default\x22 /\x3e\n', 'meTag': '\x3clink rel\x3d\x22me\x22 href\x3d\x22https://www.blogger.com/profile/09226000421829809677\x22 /\x3e\n', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/3fd7f5c58b13f8a7', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': { 'platforms': [{ 'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': '' }, { 'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook' }, { 'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog' }, { 'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter' }, { 'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest' }, { 'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email' }], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en_GB\x27};\x3c/script\x3e' }, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'index', 'pageName': '', 'pageTitle': 'Privacy Policy Generator Tool'
+                }
+            }, { 'name': 'features', 'data': { 'sharing_get_link_dialog': 'true', 'sharing_native': 'false' } }, { 'name': 'messages', 'data': { 'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard', 'ok': 'Ok', 'postLink': 'Post link' } }, { 'name': 'template', 'data': { 'name': 'custom', 'localizedName': 'Custom', 'isResponsive': true, 'isAlternateRendering': false, 'isCustom': true } }, { 'name': 'view', 'data': { 'classic': { 'name': 'classic', 'url': '?view\x3dclassic' }, 'flipcard': { 'name': 'flipcard', 'url': '?view\x3dflipcard' }, 'magazine': { 'name': 'magazine', 'url': '?view\x3dmagazine' }, 'mosaic': { 'name': 'mosaic', 'url': '?view\x3dmosaic' }, 'sidebar': { 'name': 'sidebar', 'url': '?view\x3dsidebar' }, 'snapshot': { 'name': 'snapshot', 'url': '?view\x3dsnapshot' }, 'timeslide': { 'name': 'timeslide', 'url': '?view\x3dtimeslide' }, 'isMobile': false, 'title': 'Privacy Policy Generator Tool', 'description': '', 'url': 'https://privacypolicy-generatortool.blogspot.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false } }]);
+            _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'main', document.getElementById('HTML1'), {}, 'displayModeFull'));
+            _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'main', document.getElementById('HTML3'), {}, 'displayModeFull'));
+            _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'main', document.getElementById('HTML2'), {}, 'displayModeFull'));
+        </script>
+</body>
+
+</html>
