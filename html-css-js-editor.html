@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS JS Executor</title>
+    <link rel="canonical" href="https://tools.techycodes.tech/html-css-js-editor" />
+
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214993080-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-214993080-1');
+    </script>
+</head>
+
+<body>
+    <style>
+        
+.preview-area {
+  width: 100%;
+  height: 95%;
+  background-color: white;
+}
+.preview-area iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.editor {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+  flex: 1;
+  background-color: white;
+  
+
+}
+.fullscreen {
+  width: 100%;
+  height: 450px;
+  background-color: white;
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 25px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size:30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+    </style>
+
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">HTML CSS JS Executor</span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                <a href="https://mohitgoyal.me" class="mr-5 hover:text-gray-900">Home</a>
+                <a href="https://mohitgoyal.me/#about" class="mr-5 hover:text-gray-900">About</a>
+                <a href="https://mohitgoyal.me/#skills" class="mr-5 hover:text-gray-900">Skills</a>
+                <a href="https://mohitgoyal.me/#projects" class="mr-5 hover:text-gray-900">Projects</a>
+                <a href="https://mohitgoyal.me/#contact" class="mr-5 hover:text-gray-900">Contact</a>
+            </nav>
+            <button
+                class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+                id="myBtn">Full Screen
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 mx-auto">
+            <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Coding Area</h1>
+
+            <div class="flex flex-wrap -m-4 ">
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="h-full bg-gray-100 p-8 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                            <path
+                                d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                            </path>
+                        </svg>
+
+                        <textarea id="htmlCode" class="editor" placeholder="HTML Code"
+                            oninput="showPreview()"></textarea>
+
+                        <br>
+
+                        <textarea id="cssCode" class="editor" placeholder="CSS Code" oninput="showPreview()"></textarea>
+                        <br>
+
+                        <textarea id="jsCode" class="editor" placeholder="JavaScript Code"
+                            oninput="showPreview()"></textarea>
+
+
+                        <a class="inline-flex items-center">
+                            <span class="flex-grow flex flex-col pl-4">
+                            </span>
+
+
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="h-full bg-gray-100 p-8 rounded">
+
+                        <div class="preview-area">
+                            <iframe id="preview-window"></iframe>
+                        </div>
+
+                        <a class="inline-flex items-center">
+                            <span class="flex-grow flex flex-col pl-4">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="container px-5 mx-auto">
+                <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md: w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded">
+
+
+                            <div class="preview-area fullscreen">
+                                <iframe id="preview-window2"></iframe>
+                            </div>
+
+
+                            <a class="inline-flex items-center">
+                                <span class="flex-grow flex flex-col pl-4">
+                                </span>
+
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+            </script>
+
+            <script>function showPreview() {
+                    var htmlCode = document.getElementById("htmlCode").value;
+                    var cssCode = "<style>" + document.getElementById("cssCode").value + "</style>";
+                    var jsCode = "<scri" + "pt>" + document.getElementById("jsCode").value + "</scri" + "pt>";
+                    var frame = document.getElementById("preview-window").contentWindow.document;
+                    var frame2 = document.getElementById("preview-window2").contentWindow.document;
+                    frame.open();
+                    frame.write(htmlCode + cssCode + jsCode);
+                    frame.close();
+                    frame2.open();
+                    frame2.write(htmlCode + cssCode + jsCode);
+                    frame2.close();
+                }
+
+
+            </script>
+
+            <script>
+                // Protection Starts
+
+                $(document).bind("contextmenu", function (e) {
+                    return false;
+                });
+
+                $(document).keydown(function (event) {
+                    // Prevent F12 -
+                    if (event.keyCode == 123) {
+                        return false;
+                    }
+                    // Prevent Ctrl+a = disable select all
+                    // Prevent Ctrl+u = disable view page source
+                    // Prevent Ctrl+s = disable save
+                    if (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83 || event.keyCode === 65)) {
+                        return false;
+                    }
+                    // Prevent Ctrl+Shift+I = disabled debugger console using keys open
+                    else if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+                        return false;
+                    }
+                });
+
+    // Protection Ends
+
+
+
+            </script>
+
+</body>
+
+
+
+
+</html>
