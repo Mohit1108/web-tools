@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Send WhatsApp Message - Mohit Goyal</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link id="favicon" rel="shortcut icon" href="img/whats-app.png" type="image/png" />
+    <link rel="stylesheet" href="/css/wa-sender.css">
+        <link rel="canonical" href="https://tools.techycodes.tech/whatsapp-message-sender" />
+
+<meta name="google-site-verification" content="F3MrYkVXGqhSCwWHNJWdhzopmncY1i-oRHmyIi03vsU" />
+<meta name="yandex-verification" content="60de72d02e38437d" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214993080-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-214993080-1');
+    </script>
+<!-- Navbar Js  -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="/assets/navbar.js"></script>
+</head>
+
+<body>
+        <div id="tools-Navbar">
+        </div>
+
+    <div class="container text-center">
+        <div class="form-box">
+            <h2>Send WhatsApp Message</h2>
+            <p>An Online Tool that will send Messages without saving their number in the contact list. <br> Just Open it
+                and Enter the
+                WhatsApp number, it will automatically open your WhatsApp...</p>
+            <form id="waform" action="#">
+
+                <div class="form-group">
+
+                    <input style="width: 70px;" maxlength="4" minlength="2" id="code" class="form-input"
+                        placeholder="+91" type="tel" value="+91" required>
+                    <input id="phone" type="number" class="form-input" placeholder="Enter Phone Number" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea style="width: 100%;" id="message" rows="10" class="form-input"
+                        placeholder="Type your message..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="button">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="wa-bg">
+
+    </div>
+
+
+    <script type="text/javascript">
+        var WaForm = {
+            init: function () {
+                this.getForm().addEventListener('submit', this.submit);
+            },
+            getForm: function () {
+                return document.getElementById('waform');
+            },
+            submit: function (event) {
+                event.preventDefault();
+                var msg = WaForm.getMsg(document.getElementById('message').value),
+                    phone = document.getElementById('phone').value,
+                    code = document.getElementById('code').value;
+
+                if (WaForm.isMobile()) {
+                    window.open('whatsapp://send?phone=' + code + phone + '&text=' + msg, '_blank');
+                } else {
+                    window.open('https://api.whatsapp.com/send?phone=' + code + phone + '&text=' + msg, '_blank');
+                }
+            },
+            getMsg: function (text) {
+                return encodeURIComponent(text);
+            },
+            isMobile: function () {
+                return navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i);
+            }
+        };
+        WaForm.init(); // init app
+    </script>
+
+
+<!-- Protection starts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+<!-- Protection End -->
+<script src="/js/ads.js"></script>
+
+<!-- Bootstrap JS  -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
