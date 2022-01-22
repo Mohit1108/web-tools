@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="Word Character Counter">
+    <meta name="description" content=" Online word counters are a perfect tool for anyone who needs to keep a count of their words and characters, but doesn’t use Microsoft Word. Imagine writing a piece and having to manually count the words! Not only will it take forever, but there’s a chance you won’t be wholly accurate. This tool is also a good way to assess your words per minute typing rate. Simply time yourself timing for five minutes. Type into the box on the online word counter. When the time is up, divide your total word count by five, and you have your average words per minute rate.And also undrline the grammitacally wrong words and sentences by red colour.">
+    <meta name="keywords"
+        content="word counter,word counter tool,online word counter, word frequency counter,essay word counter, word counter online, website word counter,word counter for google docs,web page word counter,google docs word counter, free word counter, ,google word counter, unique word counter,word counter website,word counter, word counter tool online, 	word character counter,book word counter, character counter word,word counter for essays, pdf word counter,text word counter, 	word counter google, 	word per minute counter, word counter with spaces,word counter net,word counter plus,counter word,count characters excel,sms character limit,letter frequency counter,twitter character limit,character count in word 2020,charcountonline,3000 characters in words,twitter character limit 2020,word counter camera,what does 1000 characters look like,word count in word,word count google docs,word frequency counter,content words counter,limited word count,2000 characters to words,length checker,word count chrome extension,meta title counter,gmail character count,how many words is 70 characters,seo title counter,google excerpt length,word counter,google search console,">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Word Character Counter</title>
+    <link rel="stylesheet" href="/css/word-char-counter.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="canonical" href="https://tools.techycodes.tech/word-character-counter" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214993080-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-214993080-1');
+    </script>
+</head>
+
+<body>
+    <div id="tools-Navbar">
+    </div>
+
+<div class="login-div">
+    <div class="logo"></div>
+    <div class="title">Word | Character | Counter</div>
+    <div class="sub-title">Count How many Words and Character you have Typed!</div>
+    <div class="fields">
+
+        <form name="converter">
+            <textarea class="inp-txt" id="words" placeholder="Type or Paste Unlimited Text Here"></textarea>
+
+        </form>
+    </div>
+
+
+
+            <button class="calculate" onclick="countwords()">Count Characters & Words </button>
+            <button style="width: 50%;" class="calculate" value="Clear" onclick="javascript:eraseText();">Reset!</button>
+        
+        
+        <div class="result-txt sub-title">
+            <p class="title">Input Text has: </p>
+
+            <div style="text-align: justify; " id="showdata">
+            </div>   
+            <div style="text-align: justify; " id="showwordscount">
+            </div>
+
+        </div>
+
+
+
+    <div class="link">
+        <a href="https://techycodes.tech/">Visit Official Website</a> or
+        <a href="https://tools.techycodes.tech/">Tool Website</a>
+
+
+    </div>
+    </a>All rights reserved.
+    <span class='creator'>Made with &#9829; by
+
+        <a style="color: #aaa; text-decoration: none;" href='https://techycodes.tech/'> Techy Codes</a>
+    </span>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Area Finish -->
+
+    
+
+    <script>
+        const countwords = () => {
+            let noc = document.getElementById('words').value.length;
+
+            let now = document.getElementById('words').value;
+
+            now = now.match(/\w+/g);
+            now = now.length;
+            console.log(now);
+            document.getElementById('showdata').innerHTML = " Total Character = " + noc;
+
+            document.getElementById('showwordscount').innerHTML = "  Total Words = " + now;
+
+        }
+    </script>
+    <script>
+        function eraseText() {
+            document.getElementById("words").value = "";
+        }
+    </script>
+
+    <!-- Protection starts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+    <!-- Protection End -->
+    <script src="/js/ads.js"></script>
+
+
+    <!-- Navbar Js  -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="/assets/navbar.js"></script>
+
+    <!-- Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="/js/ads.js"></script>
+    <script src="/assets/anylitics.html"></script>
+
+</body>
+
+</html>
