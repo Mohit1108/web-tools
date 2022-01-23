@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://tools.techycodes.tech/qr-code-generator" />
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/script.js"></script>
+    <!-- <script src="/js/script.js"></script> -->
     <!-- Bootstrap css  -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -98,8 +98,8 @@
             background: none;
             font-size: 18px;
             color: #555;
-            margin-left: 25px;
-            padding: 20px 10px 20px 5px;
+            padding: 20px;
+            width: 90%;
         }
 
         .username,
@@ -170,7 +170,7 @@
 
         <div class="fields">
             <div id="qr-form-container" class="username">
-                <input  style="width: 100%;" id="qr-input-content" type="text" class="user-input" placeholder="Enter Link!" />
+                <input id="qr-input-content" type="text" class="user-input" placeholder="Enter Link!" />
             </div>
 
             <button id="qr-call-btn" class="generate-button">Generate</button>
