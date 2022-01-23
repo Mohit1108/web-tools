@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <link rel="canonical" href="https://tools.techycodes.tech/gradient-generator" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/img/logo.png">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214993080-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-214993080-1');
+        </script>
+</head>
+<body>
+    <style type="text/css">
+  
+
+    
+.color1,
+.color2 {
+    width: 5em;
+    height: 3em;
+    cursor: pointer;
+    background: none;
+}
+
+.current-bg {
+    font-family: "Source Code Pro", monospace;
+}
+
+.flex-center {
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    width: 80%;
+    height: 300px;
+    margin-bottom: 30px;
+    display: flex;
+    align-content: center;
+    border-radius: 10px;
+
+          margin-left: auto;
+      margin-right: auto;
+    
+}
+
+label {
+    font-weight: bolder;
+    font-size: 600;
+    color: #424242;
+    font-size: 2.9em;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input {
+    font-size: 1.2em;
+    text-align: center;
+    color: #424242;
+    border-style: groove;
+    border-color: powderblue;
+    border-radius: 1px;
+
+}
+</style>
+    
+    
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">Gradient Generator</span>
+            </a>
+            <nav id="main_nav"
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                <a href="https://mohitgoyal.me" class="mr-5 hover:text-gray-900">Home</a>
+                <a href="https://mohitgoyal.me/#about" class="mr-5 hover:text-gray-900">About</a>
+                <a href="https://mohitgoyal.me/#skills" class="mr-5 hover:text-gray-900">Skills</a>
+                <a href="https://mohitgoyal.me/#contact" class="mr-5 hover:text-gray-900">Contact US</a>
+            </nav>
+            <button 
+                class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+                <a href="https://tools.techycodes.tech">All Tools</a>
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                
+            </button>
+        </div>
+    </header>
+
+
+    <div class="parent flex-center">
+                <label> Gradient Color Generator</label><br>
+                <h5 class="current-bg font-weight-bold my-4"></h5>
+
+                <button class=" copy-property bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    Click here to copy!</button>
+
+                <button
+                    class=" random-btn bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                   Generate Random
+                </button>
+<br>
+            
+                <input class="color1 my-4 mr-4" name="color1" type="color" value="#8EC5FC" />
+                <input class="color2" name="color2" type="color" value="#E0C3FC" />
+                <br>
+
+    </div>
+
+    <div class="box mainbox"  id="main"></div>  
+
+
+
+        
+<script
+        language="Javascript">
+        const htmlBody = document.querySelector(".mainbox"); 
+        const color1 = document.querySelector(".color1"); 
+        const color2 = document.querySelector(".color2"); 
+        const currentSelection = document.querySelector(".current-bg"); 
+        const copyProperty = document.querySelector(".copy-property"); 
+        const randomButton = document.querySelector(".random-btn"); 
+        function setGradient() { 
+            htmlBody.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`; 
+            currentSelection.textContent = `${htmlBody.style.background};`; 
+        } 
+            
+        function generateRandom() {
+            const randomColor1 = Math.random().toString(16).slice(2, 8).toUpperCase(); 
+            const randomColor2 = Math.random().toString(16).slice(2, 8).toUpperCase(); 
+            color1.value = `#${randomColor1}`; color2.value = `#${randomColor2}`; setGradient(); 
+            }
+        function copyText() {
+            const text = currentSelection.innerText; 
+            let temp_element = document.createElement("textarea"); 
+            document.body.appendChild(temp_element);
+            temp_element.value = text; temp_element.select(); 
+            document.execCommand("copy"); 
+            document.body.removeChild(temp_element); 
+        }
+            window.addEventListener("load", setGradient); 
+            color1.addEventListener("input", setGradient); 
+            color2.addEventListener("input", setGradient); 
+            copyProperty.addEventListener("click", copyText); 
+            randomButton.addEventListener("click", generateRandom);     
+            
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
