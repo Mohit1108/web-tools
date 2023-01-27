@@ -1,2 +1,0 @@
-// AdSense Code for tools
-
